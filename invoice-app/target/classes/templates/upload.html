@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+function success_alert() {
+   alert("Loaded successfully");
+}
+</script>
+</head>
+<body style="background-color:#00bcd4ad">
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+	            <div>
+	            <div style="background-color:#0877c578; height:100px">
+                <h1 style="text-align:center; padding-top:30px" >Invoice Details</h1>
+                </div>
+                <div style="padding-top:20px">
+                    <table style="margin-left: auto;  margin-right: auto;">
+                        <tbody>
+                            <tr> <td> Vendor Name : </td> <td> <input type='text' name="vendorName"></input></td></tr>
+
+                            <tr> <td> Supplier Number: </td> <td>  <input type='text' name="suplierNumber" ></input></td></tr>
+
+                            <tr> <td> Customer PO : </td> <td> <input type='text' name="customerPo"></input></td></tr>
+
+                            <tr> <td> Total Amount :</td> <td>  <input type='text' name="totalAmount" ></input></td></tr>
+
+                            <tr> <td> Invoice Number : </td> <td> <input type='text' name="invoiceNumber"></input></td></tr>
+
+                            <tr> <td> Invoice Date: </td> <td> <input type='date' name="invoiceDate"></input></td></tr>
+
+                            <tr> <td> File Format:</td> <td>  <input type='text' name="fileFormat" ></input></td></tr>
+
+                            <tr> <td> File Name : </td> <td> <input type='text' name="fileName" ></input></td></tr>
+                            
+                            <tr> <td></td><td> <input type="file" name="file" /><br/><br/> </td></tr>
+                            
+                            <tr> <td></td> <td> <input type="reset" value="Clear" /> &emsp; <input type="submit" value="Load" onClick="success_alert()"/> </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+
+</form>
+
+</body>
+</html>
