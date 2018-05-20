@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class UploadController {
     @PostMapping("/upload") // //new annotation since 4.3
     //@RequestMapping("/")
     @ResponseBody
-    public String singleFileUpload(@RequestParam("file") MultipartFile file,
+    public ModelAndView singleFileUpload(@RequestParam("file") MultipartFile file,
     		@RequestParam("vendorName") String vendorName,
     		@RequestParam("suplierNumber")String suplierNumber,
     		@RequestParam("customerPo")String customerPo,
@@ -76,7 +77,7 @@ public class UploadController {
             e.printStackTrace();
         }
 
-        return result;
+        return new ModelAndView("upload", "result", result);
         
     }
 
